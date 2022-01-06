@@ -1,0 +1,19 @@
+.register-seller {
+  margin: auto;
+  width: 25%;
+  margin-top: 50px;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+.register-seller .register_head p {
+  text-align: center;
+  font-size: 40px;
+  color: rgb(61, 94, 167);
+  text-decoration: underline 1px solid rgb(76, 100, 165);
+}
+.register-seller .passwordfield {
+  display: flex;
+}
+.register-seller .passwordfield .eye {
+  margin-top: 25px;
+}

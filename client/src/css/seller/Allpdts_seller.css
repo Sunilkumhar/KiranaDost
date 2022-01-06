@@ -1,0 +1,9 @@
+.allpdts-seller {
+  overflow: hidden;
+}
+.allpdts-seller .allpdts_head p {
+  text-align: center;
+  font-size: 40px;
+  color: rgb(61, 94, 167);
+  text-decoration: underline 1px solid rgb(76, 100, 165);
+}

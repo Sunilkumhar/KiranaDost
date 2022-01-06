@@ -1,0 +1,46 @@
+.seller-profile {
+  margin-bottom: 50px;
+}
+.seller-profile .profiel_head {
+  text-align: center;
+  font-size: 40px;
+  color: rgb(61, 94, 167);
+  text-decoration: underline 1px solid rgb(76, 100, 165);
+}
+
+.seller-profile .profile_detail {
+  width: 75%;
+  margin: auto;
+  margin-top: 50px;
+  box-shadow: 4px 4px 10px #c7c2c2;
+  padding-bottom: 25px;
+}
+.seller-profile .profile_detail .profile_img {
+  margin: auto;
+  padding: 15px 10px;
+  margin-top: auto;
+}
+.seller-profile .profile_detail .profile_img img {
+  width: 85%;
+  margin-top: auto;
+}
+.seller-profile .profile_detail .detaisl {
+  margin-top: 35px;
+}
+.seller-profile .profile_detail .detaisl p {
+  font-size: 20px;
+}
+.seller-profile .profile_detail .detaisl .edit-links .shop-owner {
+  margin-right: 50px;
+}
+
+.seller-profile .delete_acc {
+  width: 80%;
+  margin: auto;
+  margin-top: 100px;
+}
+.seller-profile .delete_acc .alert_delete {
+  width: 72%;
+  font-size: 20px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,22 @@
+.singlestaff {
+  margin-top: 50px;
+  padding: 15px 10px;
+  box-shadow: 4px 4px 10px #c7c2c2;
+  background-color: #eeeef7;
+}
+
+.singlestaff .singlestaff_img {
+  margin: auto;
+  margin-top: auto;
+}
+
+.singlestaff .singlestaff_img img {
+  width: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+}
+.singlestaff .singlestaff_detail {
+  font-size: 20px;
+}

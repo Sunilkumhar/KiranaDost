@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  /* background-image: url("./images/output-onlinepngtools\ \(3\).png"); */
+  background-color: rgb(228, 228, 252);
+  background-size: cover;
+  background-repeat: repeat;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(104, 104, 104);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1d1d1d;
+}

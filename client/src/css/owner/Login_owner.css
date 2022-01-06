@@ -1,0 +1,19 @@
+.login-owner {
+  margin: auto;
+  width: 20%;
+  margin-top: 13%;
+  padding: 10px;
+}
+.login-owner .login_head p {
+  text-align: center;
+  font-size: 40px;
+  color: rgb(61, 94, 167);
+  text-decoration: underline 1px solid rgb(76, 100, 165);
+}
+
+.login-owner .passwordfield {
+  display: flex;
+}
+.login-owner .passwordfield .eye {
+  margin-top: 25px;
+}

@@ -1,0 +1,18 @@
+.single_pdt {
+  display: flex;
+  margin-top: 50px;
+}
+.single_pdt .pdt_img {
+  margin: auto;
+  padding: 15px 20px;
+}
+.single_pdt .pdt_img img {
+  width: 100%;
+}
+
+.single_pdt .pdt_detail {
+  /* margin-left: px; */
+}
+.single_pdt .pdt_detail p {
+  font-size: 20px;
+}

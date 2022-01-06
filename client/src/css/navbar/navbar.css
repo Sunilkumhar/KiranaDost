@@ -1,0 +1,19 @@
+.navbar_owner {
+  display: flex;
+  width: 100%;
+  background: fixed;
+  background-color: rgb(78, 147, 252);
+}
+.navbar_owner .logo p {
+  padding: 5px 10px;
+  font-size: 20px;
+}
+
+.navbar_owner .routes {
+  display: flex;
+  margin-left: auto;
+}
+.navbar_owner .routes p {
+  padding: 5px 10px;
+  font-size: 20px;
+}

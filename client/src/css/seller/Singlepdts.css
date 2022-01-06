@@ -1,0 +1,20 @@
+.singlepdt_seller {
+  display: flex;
+  margin-top: 50px;
+}
+.singlepdt_seller .pdt_img {
+  margin: auto;
+  padding: 15px 10px;
+  margin-top: auto;
+}
+.singlepdt_seller .pdt_img img {
+  width: 100%;
+  margin-top: auto;
+}
+.singlepdt_seller .allpdts_detaisl {
+  margin-top: 30px;
+  margin-left: 10px;
+}
+.singlepdt_seller .allpdts_detaisl p {
+  font-size: 20px;
+}
