@@ -36,7 +36,7 @@ function NavbarSeller() {
           style={{ color: "black", textDecoration: "none" }}
         >
           <Avatar
-            alt="P"
+            alt={localStorage.getItem("name")}
             src="/static/images/avatar/1.jpg"
             style={{
               marginTop: "15px",

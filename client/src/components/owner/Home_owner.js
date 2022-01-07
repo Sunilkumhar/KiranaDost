@@ -18,6 +18,7 @@ function Home_owner() {
       const jwt = localStorage.getItem("token");
       const user = jwtDecode(jwt);
       localStorage.setItem("id", user._id);
+      localStorage.setItem("name", user.name);
     } catch {}
   }, []);
 
