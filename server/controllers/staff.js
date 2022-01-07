@@ -73,3 +73,19 @@ exports.updateone = async (req, res) => {
   user.save();
   res.send(user);
 };
+
+exports.delete = async (req, res) => {
+  let user = await Owner.findOne({ _id: req.params.o_id });
+  if (!user) return res.status(400).json({ message: "User does not exit" });
+  let staffdata;
+  user.staff.forEach((item) => {
+    if (item._id == req.params.id) staffdata = item;
+  });
+  if (!staffdata)
+    return res.status(400).json({ message: "Staff does not exist" });
+
+  const index = user.staff.indexOf(staffdata);
+  user.staff.splice(index, 1);
+  user.save();
+  res.send(user);
+};

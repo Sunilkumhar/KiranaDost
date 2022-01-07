@@ -55,6 +55,7 @@ router
     auth,
     upload.single("seller_image"),
     UsersController.update
-  );
+  )
+  .delete("/:id/delete", auth, UsersController.delete);
 
 module.exports = router;

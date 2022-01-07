@@ -40,23 +40,30 @@ exports.updatepdt = async (req, res) => {
   if (!pdtdata)
     return res.status(400).json({ message: "Product does not exist" });
 
-  pdtdata.pdt_name = req.body.pdt_name || pdtdata.pdt_name;
-  pdtdata.pdt_remaining_stock =
-    req.body.pdt_remaining_stock || pdtdata.pdt_remaining_stock;
-  pdtdata.pdt_bought_price =
-    req.body.pdt_bought_price || pdtdata.pdt_bought_price;
-  pdtdata.pdt_current_price =
-    req.body.pdt_current_price || pdtdata.pdt_current_price;
-  pdtdata.pdt_image = (req.file && req.file.path) || pdtdata.pdt_image;
+  if (req.body.pdt_remaining_stock === "0") {
+    const index = user.product.indexOf(pdtdata);
+    user.product.splice(index, 1);
+    user.save();
+    res.send(user.product);
+  } else {
+    pdtdata.pdt_name = req.body.pdt_name || pdtdata.pdt_name;
+    pdtdata.pdt_remaining_stock =
+      req.body.pdt_remaining_stock || pdtdata.pdt_remaining_stock;
+    pdtdata.pdt_bought_price =
+      req.body.pdt_bought_price || pdtdata.pdt_bought_price;
+    pdtdata.pdt_current_price =
+      req.body.pdt_current_price || pdtdata.pdt_current_price;
+    pdtdata.pdt_image = (req.file && req.file.path) || pdtdata.pdt_image;
 
-  let new_profit =
-    (req.body.pdt_current_price || pdtdata.pdt_current_price) -
-    (req.body.pdt_bought_price || pdtdata.pdt_bought_price);
-  pdtdata.pdt_profit = new_profit;
+    let new_profit =
+      (req.body.pdt_current_price || pdtdata.pdt_current_price) -
+      (req.body.pdt_bought_price || pdtdata.pdt_bought_price);
+    pdtdata.pdt_profit = new_profit;
 
-  user.product.push(pdtdata);
-  const index = user.product.indexOf(pdtdata);
-  user.product.splice(index, 1);
-  user.save();
-  res.send(user.product);
+    user.product.push(pdtdata);
+    const index = user.product.indexOf(pdtdata);
+    user.product.splice(index, 1);
+    user.save();
+    res.send(user.product);
+  }
 };

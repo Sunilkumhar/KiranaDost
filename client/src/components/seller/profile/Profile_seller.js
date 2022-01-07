@@ -25,8 +25,20 @@ function Profile_seller() {
       });
   }, []);
 
-  const deleteaccount = () => {
+  const deleteaccount = async () => {
     console.log("delete account");
+    await axios
+      .delete(`/buyer/${localStorage.getItem("id")}/delete`, {
+        headers: {
+          "x-auth-token": localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        window.location.href = "http://localhost:3000/logout";
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   };
 
   return (

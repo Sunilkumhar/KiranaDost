@@ -42,14 +42,21 @@ exports.updatepdt = async (req, res) => {
   if (!pdtdata)
     return res.status(400).json({ message: "Product does not exist" });
 
-  pdtdata.buy_name = req.body.buy_name || pdtdata.buy_name;
-  pdtdata.buy_price = req.body.buy_price || pdtdata.buy_price;
-  pdtdata.buy_quantity = req.body.buy_quantity || pdtdata.buy_quantity;
-  pdtdata.buy_image = (req.file && req.file.path) || pdtdata.buy_image;
+  if (req.body.buy_quantity === "0") {
+    const index = user.buy_details.indexOf(pdtdata);
+    user.buy_details.splice(index, 1);
+    user.save();
+    res.send(user.buy_details);
+  } else {
+    pdtdata.buy_name = req.body.buy_name || pdtdata.buy_name;
+    pdtdata.buy_price = req.body.buy_price || pdtdata.buy_price;
+    pdtdata.buy_quantity = req.body.buy_quantity || pdtdata.buy_quantity;
+    pdtdata.buy_image = (req.file && req.file.path) || pdtdata.buy_image;
 
-  user.buy_details.push(pdtdata);
-  const index = user.buy_details.indexOf(pdtdata);
-  user.buy_details.splice(index, 1);
-  user.save();
-  res.send(user.buy_details);
+    user.buy_details.push(pdtdata);
+    const index = user.buy_details.indexOf(pdtdata);
+    user.buy_details.splice(index, 1);
+    user.save();
+    res.send(user.buy_details);
+  }
 };

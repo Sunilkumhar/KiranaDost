@@ -64,3 +64,12 @@ exports.update = async (req, res) => {
   );
   res.status(200).json({ updates: updateUser });
 };
+
+exports.delete = async (req, res) => {
+  let user = await Owner.findOne({ _id: req.params.id });
+  console.log(user);
+  if (!user) return res.status(404).json({ message: "user dos not exist" });
+
+  await Owner.findByIdAndDelete({ _id: req.params.id });
+  res.status(200).json({ message: `user deleted id : ${req.params.id}` });
+};

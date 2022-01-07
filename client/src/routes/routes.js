@@ -47,7 +47,7 @@ const routes = [
   { path: "/owner/staff", element: <Staff_owner /> },
   { path: "/owner/staff/edit", element: <Staff_edit_owner /> },
   { path: "/owner/ordermore", element: <Ordermore_owner /> },
-  // { path: "/owner/pdt/edit", element: <Pdt_owner_edit /> },
+  { path: "/owner/pdt/edit", element: <Pdt_owner_edit /> },
 
   // product edit owner i.e  pdt_owner_edit
   //Pay salary for staff remaining.

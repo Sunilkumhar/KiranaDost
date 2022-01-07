@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { TextField } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
-import corner from "../../../images/corner.png";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import "../../../css/owner/Ordermore_single_owner.css";

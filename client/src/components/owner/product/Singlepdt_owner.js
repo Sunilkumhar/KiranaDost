@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import "../../../css/owner/Singlepdt_owner.css";
 import { BASE_URL } from "../../../baseURL";
-import corner from "../../../images/corner.png";
 import Grid from "@material-ui/core/Grid";
 
 function Singlepdts({
@@ -17,8 +16,6 @@ function Singlepdts({
 }) {
   const handleEdit = () => {
     localStorage.setItem("edit_id", _id);
-    console.log(pdt_image);
-    //to="/owner/pdt/edit"
   };
   return (
     <div className="single_pdt">
@@ -51,9 +48,15 @@ function Singlepdts({
               <strong>Current Profit/Qty. : </strong>
               {pdt_current_price - pdt_bought_price}
             </p>
-            <Button variant="contained" color="primary" onClick={handleEdit}>
-              Edit Product
-            </Button>
+            <Link
+              to="/owner/pdt/edit"
+              style={{ textDecoration: "none" }}
+              className="product-seller"
+            >
+              <Button variant="contained" color="primary" onClick={handleEdit}>
+                Edit Product
+              </Button>
+            </Link>
           </div>
         </Grid>
       </Grid>

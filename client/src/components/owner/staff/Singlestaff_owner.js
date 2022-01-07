@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import "../../../css/owner/SingleStaff_owner.css";
 import { BASE_URL } from "../../../baseURL";
+import axios from "../../../axios";
 
 function Singlestaff_owner({
   staff_name,
@@ -18,8 +19,20 @@ function Singlestaff_owner({
   const handleEdit = () => {
     localStorage.setItem("edit_id", _id);
   };
-  const handleDelete = () => {
-    localStorage.setItem("edit_id", _id);
+  const handleDelete = async () => {
+    console.log("delete Staff");
+    await axios
+      .delete(`/staff/${localStorage.getItem("id")}/${_id}/delete`, {
+        headers: {
+          "x-auth-token": localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        console.log("staff deleted");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   };
 
   return (

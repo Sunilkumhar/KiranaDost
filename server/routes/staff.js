@@ -60,6 +60,7 @@ router
     auth,
     upload.single("staff_image"),
     UsersController.updateone
-  );
+  )
+  .delete("/:o_id/:id/delete", auth, UsersController.delete);
 
 module.exports = router;

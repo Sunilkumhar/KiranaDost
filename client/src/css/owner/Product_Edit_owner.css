@@ -1,11 +1,11 @@
-.addstaff {
+.updatepdt_owner {
   margin: auto;
   width: 25%;
   padding: 10px;
 }
-.addstaff .addstaf_head p {
+.updatepdt_owner .updatepdt_owner_head p {
   text-align: center;
-  font-size: 40px;
+  font-size: 35px;
   color: rgb(61, 94, 167);
   text-decoration: underline 1px solid rgb(76, 100, 165);
 }
