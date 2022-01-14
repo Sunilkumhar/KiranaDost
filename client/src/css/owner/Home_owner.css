@@ -18,3 +18,12 @@
   color: rgb(61, 94, 167);
   text-decoration: underline 1px solid rgb(76, 100, 165);
 }
+.home-owner .allpdts-owner .pdt_details h1 {
+  margin-left: 25px;
+}
+
+@media screen and (max-width: 759px) {
+  .home-owner .allpdts-owner .allpdts-owner-head {
+    font-size: 35px;
+  }
+}

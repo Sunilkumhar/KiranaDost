@@ -6,14 +6,19 @@ import Singlepdt_owner from "./product/Singlepdt_owner";
 import Grid from "@material-ui/core/Grid";
 import MicIcon from "@material-ui/icons/Mic";
 import "../../css/owner/Home_owner.css";
+import { useNavigate } from "react-router-dom";
 
 import axios from "../../axios";
 import Navbar from "../navbar/Navbar";
 
 function Home_owner() {
+  const history = useNavigate();
+
   const [allpdts, setallpdts] = useState([]);
 
   useEffect(() => {
+    if (!localStorage.getItem("token")) history("/");
+
     try {
       const jwt = localStorage.getItem("token");
       const user = jwtDecode(jwt);

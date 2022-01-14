@@ -13,12 +13,12 @@ function Singlepdts({ _id, buy_name, buy_price, buy_image, buy_quantity }) {
   return (
     <div className="singlepdt_seller">
       <Grid container spacing={2}>
-        <Grid item xs={6}>
+        <Grid item md={6}>
           <div className="pdt_img">
             <img src={`${BASE_URL}/${buy_image}`} alt="" />
           </div>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item md={6}>
           <div className="allpdts_detaisl">
             <p>
               <strong> Name : </strong>

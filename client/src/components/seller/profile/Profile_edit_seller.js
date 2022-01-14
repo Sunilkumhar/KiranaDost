@@ -28,6 +28,10 @@ function Profile_edit_seller() {
   const [show, setshow] = useState("password");
   const [eyeicon, seteyeicon] = useState("VisibilityOffIcon");
 
+  useEffect(() => {
+    if (!localStorage.getItem("token")) history("/");
+  }, []);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setVal({ ...vals, [name]: value });

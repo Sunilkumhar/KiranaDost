@@ -75,7 +75,7 @@ function Singlestaff_owner({
               variant="contained"
               color="primary"
               onClick={handleEdit}
-              style={{ margin: "0px 10px" }}
+              style={{ margin: "10px 10px" }}
             >
               Edit
             </Button>
@@ -89,7 +89,7 @@ function Singlestaff_owner({
               variant="contained"
               color="primary"
               onClick={handleEdit}
-              style={{ margin: "0px 20px" }}
+              style={{ margin: "10px 20px" }}
             >
               Pay Salary
             </Button>
@@ -103,7 +103,7 @@ function Singlestaff_owner({
               variant="contained"
               color="primary"
               onClick={handleDelete}
-              style={{ margin: "0px 10px" }}
+              style={{ margin: "10px 10px" }}
             >
               Delete Staff
             </Button>

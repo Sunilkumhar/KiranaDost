@@ -1,7 +1,8 @@
 .addstaff {
   margin: auto;
-  width: 25%;
+  width: 80%;
   padding: 10px;
+  max-width: 300px;
 }
 .addstaff .addstaf_head p {
   text-align: center;

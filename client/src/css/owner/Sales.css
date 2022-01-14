@@ -1,0 +1,45 @@
+.sales .sales-owner-head {
+  text-align: center;
+  font-size: 40px;
+  color: rgb(61, 94, 167);
+  text-decoration: underline 1px solid rgb(76, 100, 165);
+}
+
+.sales .sale_details {
+  margin-left: 50px;
+}
+
+.sales .sale_details .pick_date {
+  display: flex;
+}
+.sales .sale_details .pick_date p {
+  font-size: 30px;
+}
+
+.sales .sale_details .detail {
+  border: 1px solid rgb(168, 168, 168);
+  border-radius: 10px;
+  width: 40%;
+  padding-left: 25px;
+  box-shadow: 4px 4px 10px #9b9b9b;
+}
+.sales .sale_details .detail p {
+  font-size: 25px;
+}
+
+@media screen and (max-width: 759px) {
+  .sales .sale_details {
+    margin-left: 0px;
+  }
+  .sales .sale_details .detail {
+    border: 1px solid rgb(168, 168, 168);
+    border-radius: 10px;
+    width: 90%;
+    box-shadow: 4px 4px 10px #9b9b9b;
+    margin: auto;
+  }
+  .sales .sale_details .pick_date p {
+    font-size: 25px;
+    padding-left: 7px;
+  }
+}

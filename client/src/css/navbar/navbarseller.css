@@ -4,6 +4,9 @@
   background: fixed;
   background-color: rgb(78, 147, 252);
 }
+.navbar_seller .logo {
+  display: flex;
+}
 .navbar_seller .logo p {
   padding: 5px 10px;
   font-size: 20px;
@@ -16,4 +19,66 @@
 .navbar_seller .routes p {
   padding: 5px 10px;
   font-size: 20px;
+}
+.navbar_seller_res {
+  display: none;
+}
+.monile-link-no1 {
+  display: none;
+}
+
+@media screen and (max-width: 759px) {
+  .navbar_seller {
+    display: none;
+  }
+  .navbar_seller_res {
+    display: block;
+    overflow: hidden;
+  }
+  .monile-link-no1 {
+    display: none;
+  }
+  .navbar_seller_res {
+    display: flex;
+    width: 100%;
+    background: fixed;
+    background-color: rgb(78, 147, 252);
+  }
+  .navbar_seller_res .logo {
+    /* display: flex; */
+  }
+
+  .navbar_seller_res .logo p {
+    padding: 5px 10px;
+    font-size: 25px;
+  }
+
+  .navbar_seller_res .routes {
+    display: flex;
+    margin-left: auto;
+  }
+  .navbar_seller_res .routes p {
+    padding: 5px 10px;
+    font-size: 20px;
+  }
+  .mobile-link1 {
+    background: rgb(44, 44, 44);
+    display: flex;
+  }
+  .mobile-link1 p {
+    color: white;
+    font-size: 20px;
+    margin-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .mobile-link1 .profilelinks {
+    margin-left: auto;
+    display: flex;
+  }
+  .navbar_seller_res .routes .menu_icon {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-right: 15px;
+  }
 }

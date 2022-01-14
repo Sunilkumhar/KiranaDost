@@ -4,14 +4,19 @@ import Grid from "@material-ui/core/Grid";
 import Singlestaff_owner from "./Singlestaff_owner";
 
 import "../../../css/owner/Staff_owner.css";
+import { useNavigate } from "react-router-dom";
 
 import axios from "../../../axios";
 import Navbar from "../../navbar/Navbar";
 
 function Staff_owner() {
+  const history = useNavigate();
+
   const [staff, setstaff] = useState([]);
 
   useEffect(() => {
+    if (!localStorage.getItem("token")) history("/");
+
     axios
       .get(`/staff/${localStorage.getItem("id")}/allstaff`)
       .then((res) => {

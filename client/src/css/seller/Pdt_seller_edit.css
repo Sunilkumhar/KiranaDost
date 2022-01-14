@@ -1,9 +1,10 @@
 .editpdt {
   margin: auto;
-  width: 25%;
+  width: 80%;
   margin-top: 50px;
   padding: 10px;
   margin-bottom: 50px;
+  max-width: 300px;
 }
 
 .editpdt .addpdtedit_head p {

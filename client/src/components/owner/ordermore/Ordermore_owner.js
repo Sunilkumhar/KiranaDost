@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-pascal-case */
 import React, { useEffect, useState } from "react";
 import Ordermore_single_owner from "./Ordermore_single_owner";
+import { useNavigate } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 
 import "../../../css/owner/Ordermore_owner.css";
@@ -8,9 +9,11 @@ import Navbar from "../../navbar/Navbar";
 import axios from "../../../axios";
 
 function Ordermore_owner() {
+  const history = useNavigate();
   const [pdts, setpdts] = useState([]);
 
   useEffect(() => {
+    if (!localStorage.getItem("token")) history("/");
     axios
       .get(`/buypdts/all`)
       .then((res) => {
@@ -43,7 +46,9 @@ function Ordermore_owner() {
         <div className="ordermore-pdts">
           <Grid container spacing={1}>
             {pdts.length === 0 ? (
-              <h1>Currently there are no products available to buy.</h1>
+              <h1 style={{ marginLeft: "25px" }}>
+                Currently there are no products available to buy.
+              </h1>
             ) : (
               pdts.map((x) => (
                 <Grid item md={6}>

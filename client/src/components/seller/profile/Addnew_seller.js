@@ -13,7 +13,9 @@ function Addnew_seller() {
   const [buy_price, setbuy_price] = useState("");
   const [buy_quantity, setbuy_quantity] = useState("");
   const [buy_image, setbuy_image] = useState("");
-
+  useEffect(() => {
+    if (!localStorage.getItem("token")) history("/");
+  }, []);
   const handleChangename = (e) => {
     setbuy_name(e.target.value);
   };

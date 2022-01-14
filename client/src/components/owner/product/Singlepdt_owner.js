@@ -20,13 +20,13 @@ function Singlepdts({
   return (
     <div className="single_pdt">
       <Grid container spacing={2}>
-        <Grid item xs={6}>
+        <Grid item md={6}>
           <div className="pdt_img">
             <img src={`${BASE_URL}/${pdt_image}`} alt="" />
             {/* <img src={corner} alt="" /> */}
           </div>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item md={6}>
           <div className="pdt_detail">
             <p>
               <strong> Name : </strong>

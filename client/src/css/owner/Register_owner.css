@@ -1,9 +1,10 @@
 .register-owner {
   margin: auto;
-  width: 25%;
+  width: 80%;
   margin-top: 50px;
   padding: 10px;
   margin-bottom: 50px;
+  max-width: 300px;
 }
 .register-owner .register_head p {
   text-align: center;

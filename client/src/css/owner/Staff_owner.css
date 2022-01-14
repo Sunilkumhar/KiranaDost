@@ -13,3 +13,8 @@
   margin-left: 50px;
   margin-right: 50px;
 }
+@media screen and (max-width: 759px) {
+  .allstaff .allstaff_head p {
+    font-size: 35px;
+  }
+}

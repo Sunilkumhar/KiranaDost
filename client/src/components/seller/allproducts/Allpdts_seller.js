@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import jwtDecode from "jwt-decode";
 import Singlepdts from "./Singlepdts";
 import Grid from "@material-ui/core/Grid";
+import { useNavigate } from "react-router-dom";
 
 import "../../../css/seller/Allpdts_seller.css";
 import NavbarSeller from "../../navbar/NavbarSeller";
 import axios from "../../../axios";
 
 function Allpdts_seller() {
+  const history = useNavigate();
+
   const [pdts, setpdts] = useState([]);
 
   useEffect(() => {
@@ -17,6 +20,7 @@ function Allpdts_seller() {
       localStorage.setItem("id", user._id);
       localStorage.setItem("name", user.name);
     } catch {}
+    if (!localStorage.getItem("token")) history("/");
   }, []);
 
   useEffect(() => {

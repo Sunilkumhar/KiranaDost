@@ -20,6 +20,9 @@ function Staffadd_owner() {
   const [vals, setVal] = useState(initVals);
   const [staff_image, setstaff_image] = useState("");
 
+  useEffect(() => {
+    if (!localStorage.getItem("token")) history("/");
+  }, []);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setVal({ ...vals, [name]: value });

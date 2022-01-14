@@ -9,11 +9,16 @@ import Alert from "@mui/material/Alert";
 
 import axios from "../../../axios";
 import { BASE_URL } from "../../../baseURL";
+import { useNavigate } from "react-router-dom";
 
 function Profile_seller() {
+  const history = useNavigate();
+
   const [user, setuser] = useState([]);
 
   useEffect(() => {
+    if (!localStorage.getItem("token")) history("/");
+
     axios
       .get(`/buyer/${localStorage.getItem("id")}`)
       .then((res) => {
@@ -87,6 +92,7 @@ function Profile_seller() {
                       variant="contained"
                       color="primary"
                       className="shop-owner"
+                      style={{ marginBottom: "20px" }}
                     >
                       Edit Profile
                     </Button>
@@ -100,6 +106,7 @@ function Profile_seller() {
                       variant="contained"
                       color="primary"
                       className="shop-owner"
+                      style={{ marginBottom: "20px" }}
                     >
                       Add Product
                     </Button>

@@ -90,14 +90,14 @@ function Ordermore_single_owner({
   };
   return (
     <div className="ordermore_single_pdts">
-      <Grid container spacing={1}>
-        <Grid item xs={6}>
+      <Grid container spacing={2}>
+        <Grid item md={6}>
           <div className="ordermore_img">
             <img src={`${BASE_URL}/${buy_image}`} alt="" />
             {/* <img src={corner} alt="" /> */}
           </div>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item md={6}>
           <div className="ordermore-details">
             <p>
               <strong>Name : </strong>
@@ -126,7 +126,7 @@ function Ordermore_single_owner({
           </div>
         </Grid>
         <Grid container spacing={2}>
-          <Grid item xs={4} style={{ marginLeft: "10px" }}>
+          <Grid item xs={4} style={{ marginLeft: "15px" }}>
             <TextField
               type="number"
               margin="normal"

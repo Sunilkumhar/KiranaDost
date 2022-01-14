@@ -1,8 +1,9 @@
 .login-seller {
   margin: auto;
-  width: 20%;
+  width: 80%;
   margin-top: 13%;
   padding: 10px;
+  max-width: 300px;
 }
 
 .login-seller .login_head p {

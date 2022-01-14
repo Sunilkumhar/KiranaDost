@@ -19,13 +19,16 @@
   margin: auto;
   padding: 15px 10px;
   margin-top: auto;
+  margin-left: 150px;
 }
 .owner-profile .profile_detail .profile_img img {
-  width: 85%;
+  /* width: 85%; */
+  height: 300px;
   margin-top: auto;
 }
 .owner-profile .profile_detail .detaisl {
   margin-top: 35px;
+  padding-left: 15px;
 }
 .owner-profile .profile_detail .detaisl p {
   font-size: 20px;
@@ -43,4 +46,10 @@
   width: 72%;
   font-size: 20px;
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 759px) {
+  .owner-profile .profiel_head {
+    font-size: 35px;
+  }
 }

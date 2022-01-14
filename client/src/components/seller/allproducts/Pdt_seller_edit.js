@@ -17,6 +17,10 @@ function Pdt_seller_edit() {
   const [buy_quantity, setbuy_quantity] = useState("");
   const [buy_image, setbuy_image] = useState("");
 
+  useEffect(() => {
+    if (!localStorage.getItem("token")) history("/");
+  }, []);
+
   const handleChangename = (e) => {
     setbuy_name(e.target.value);
   };

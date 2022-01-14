@@ -28,6 +28,10 @@ function Pdt_owner_edit() {
     setpdt_image(e.target.files[0]);
   };
 
+  useEffect(() => {
+    if (!localStorage.getItem("token")) history("/");
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("submit");
@@ -123,7 +127,7 @@ function Pdt_owner_edit() {
             fullWidth
             style={{ marginTop: "10px" }}
           >
-            Update Staff
+            Update Product
           </Button>
         </form>
       </div>

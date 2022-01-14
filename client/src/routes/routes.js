@@ -21,6 +21,7 @@ import Staff_edit_owner from "../components/owner/staff/Staff_edit_owner";
 import Pdt_owner_edit from "../components/owner/product/Pdt_owner_edit";
 import Profile_edit_owner from "../components/owner/profile/Profile_edit_owner";
 import Logout from "../components/Logout";
+import Sales from "../components/owner/sales/Sales";
 
 const routes = [
   { path: "/", element: <Home /> },
@@ -49,8 +50,8 @@ const routes = [
   { path: "/owner/ordermore", element: <Ordermore_owner /> },
   { path: "/owner/pdt/edit", element: <Pdt_owner_edit /> },
 
-  // product edit owner i.e  pdt_owner_edit
   //Pay salary for staff remaining.
+  { path: "/owner/sales", element: <Sales /> },
 ];
 
 export default routes;

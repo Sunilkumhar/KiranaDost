@@ -19,3 +19,15 @@
 .options-owner .register-owner-link .register-button {
   font-size: 35px !important;
 }
+
+@media screen and (max-width: 759px) {
+  .options-owner {
+    margin: auto;
+    margin-top: 50%;
+    padding: 10px;
+  }
+  .options-owner .options .login-button {
+    margin-bottom: 50px;
+    margin-left: 35px;
+  }
+}

@@ -16,12 +16,7 @@ function home() {
           style={{ textDecoration: "none" }}
           className="shop-owner"
         >
-          <Button
-            size="large"
-            variant="contained"
-            color="primary"
-            className="shop-owner"
-          >
+          <Button variant="contained" color="primary" className="shop-owner">
             Shop-Owner
           </Button>
         </Link>
@@ -31,7 +26,7 @@ function home() {
           style={{ textDecoration: "none" }}
           className="product-seller"
         >
-          <Button size="large" variant="contained" color="primary">
+          <Button variant="contained" color="primary">
             Product-Seller
           </Button>
         </Link>

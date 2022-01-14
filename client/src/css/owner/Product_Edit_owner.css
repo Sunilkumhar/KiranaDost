@@ -1,6 +1,7 @@
 .updatepdt_owner {
   margin: auto;
-  width: 25%;
+  width: 80%;
+  max-width: 300px;
   padding: 10px;
 }
 .updatepdt_owner .updatepdt_owner_head p {
@@ -8,4 +9,9 @@
   font-size: 35px;
   color: rgb(61, 94, 167);
   text-decoration: underline 1px solid rgb(76, 100, 165);
+}
+@media screen and (max-width: 759px) {
+  .updatepdt_owner .updatepdt_owner_head p {
+    font-size: 35px;
+  }
 }

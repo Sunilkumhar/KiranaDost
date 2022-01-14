@@ -9,11 +9,16 @@ import Alert from "@mui/material/Alert";
 import axios from "../../../axios";
 import { BASE_URL } from "../../../baseURL";
 import Navbar from "../../navbar/Navbar";
+import { useNavigate } from "react-router-dom";
 
 function Profile_owner() {
+  const history = useNavigate();
+
   const [user, setuser] = useState([]);
 
   useEffect(() => {
+    if (!localStorage.getItem("token")) history("/");
+
     axios
       .get(`/${localStorage.getItem("id")}`)
       .then((res) => {
@@ -72,6 +77,7 @@ function Profile_owner() {
                       variant="contained"
                       color="primary"
                       className="shop-owner"
+                      style={{ marginBottom: "20px" }}
                     >
                       Edit Profile
                     </Button>
@@ -86,6 +92,7 @@ function Profile_owner() {
                       variant="contained"
                       color="primary"
                       className="shop-owner"
+                      style={{ marginBottom: "20px" }}
                     >
                       Add Staff
                     </Button>

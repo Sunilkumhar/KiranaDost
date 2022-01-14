@@ -13,12 +13,7 @@ function Options_owner() {
           style={{ textDecoration: "none" }}
           className="login-owner-link"
         >
-          <Button
-            size="large"
-            variant="contained"
-            color="primary"
-            className="login-button"
-          >
+          <Button variant="contained" color="primary" className="login-button">
             Login
           </Button>
         </Link>
@@ -29,7 +24,6 @@ function Options_owner() {
           className="register-owner-link"
         >
           <Button
-            size="large"
             variant="contained"
             color="primary"
             className="register-button"
