@@ -86,7 +86,7 @@ function Addnew_seller() {
             onChange={handleChangeprice}
           />
           <TextField
-            type="number"
+            type="text"
             margin="normal"
             required
             fullWidth

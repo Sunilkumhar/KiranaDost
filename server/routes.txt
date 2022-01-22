@@ -32,7 +32,7 @@ Product : which owner currently has
 1. http://localhost:5000/product/:o_id/addpdt -- post request to add product
 {
     "pdt_name" : "wheat",
-    "pdt_remaining_stock" : 12,
+    "pdt_remaining_stock" : "12Kg",
     "pdt_bought_price" : 15,
     "pdt_current_price" : 50
     "pdt_image" : upload image
@@ -62,6 +62,25 @@ Staff : which owner has
 }
 5. http://localhost:5000/staff/:o_id/:id/delete -- delete request to delete a staff
 
+Sales : 
+1. http://localhost:5000/sales/:o_id/addsales --- post request to add sales
+{   
+    "curr_day" : "15",
+    "curr_month" : "aug",
+    "curr_year" : "2002",
+    "today_sale": "Rs 50",
+    "today_profit": "Rs 50",
+    "month_sale": "Rs 50",
+    "month_profit": "Rs 50"
+    
+}
+2. http://localhost:5000/sales/:o_id/getallsales  -- to get all staff
+3. http://localhost:5000/sales/:o_id/getonesales  -- to post request to get one day
+{
+    "curr_day" : "15",
+    "curr_month" : "aug",
+    "curr_year" : "2002"
+}
 
 
 Buypdts : to get all products which are availanle to buy or order more for owner.
@@ -110,7 +129,7 @@ Addpdts : if seller wants to add product or update an existing
 {
     "buy_name" : "bajra",
     "buy_price" : "25",
-    "buy_quantity" : 256
+    "buy_quantity" : "256Kg"
     "buy_image" : upload image
 }
 
@@ -130,7 +149,7 @@ Send Email : to seller and owner about transaction
     "email1" : "sunilkumhar1@gmail.com",
     "email2" : "skumhar2002@gmail.com",
     "pdt_price" : 20,
-    "pdt_qunatity" : 5,
+    "pdt_qunatity" : "5Kg",
     "pdt_name" : "rice"
     "pdt_image" : upload image of pdt
     }

@@ -6,6 +6,7 @@ const registerRouter = require("./routes/register");
 const loginRouter = require("./routes/login");
 const pdtRouter = require("./routes/product");
 const staffRouter = require("./routes/staff");
+const salesRouter = require("./routes/sales");
 const buypdtsRouter = require("./routes/buypdts");
 
 const sellerRegRouter = require("./routes/seller_register");
@@ -42,6 +43,7 @@ app.use("/", registerRouter);
 app.use("/", loginRouter);
 app.use("/product", pdtRouter);
 app.use("/staff", staffRouter);
+app.use("/sales", salesRouter);
 app.use("/buypdts", buypdtsRouter);
 
 // all routes for seller

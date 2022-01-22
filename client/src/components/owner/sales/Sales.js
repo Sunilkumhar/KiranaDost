@@ -1,22 +1,65 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../../css/owner/Sales.css";
 import Navbar from "../../navbar/Navbar";
-// import DesktopDatePicker from "@mui/lab/DesktopDatePicker";
-// import TextField from "@mui/material/TextField";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
-// import DatePicker from "@mui/lab/DatePicker";
+import axios from "../../../axios";
 
 function Sales() {
   const history = useNavigate();
-  // const [value, setValue] = React.useState(new Date("2014-08-18T21:11:54"));
+  const [curr_date, setcurr_date] = useState(new Date());
+  const [salesinfo, setsalesinfo] = useState({});
 
-  // const handleChange = (newValue) => {
-  //   setValue(newValue);
-  // };
   useEffect(() => {
     if (!localStorage.getItem("token")) history("/");
+    console.log(curr_date.getDate());
+    let obj = {
+      curr_day: curr_date.getDate(),
+      curr_month: curr_date.getMonth(),
+      curr_year: curr_date.getFullYear(),
+    };
+    console.log(obj);
+    axios
+      .post(`/sales/${localStorage.getItem("id")}/getonesales`, obj, {
+        headers: {
+          "x-auth-token": localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        setsalesinfo(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err.status);
+      });
   }, []);
+
+  useEffect(() => {
+    if (!localStorage.getItem("token")) history("/");
+    console.log(curr_date.getDate());
+    let obj = {
+      curr_day: curr_date.getDate(),
+      curr_month: curr_date.getMonth(),
+      curr_year: curr_date.getFullYear(),
+    };
+    console.log(obj);
+    axios
+      .post(`/sales/${localStorage.getItem("id")}/getonesales`, obj, {
+        headers: {
+          "x-auth-token": localStorage.getItem("token"),
+        },
+      })
+      .then((res) => {
+        setsalesinfo(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err.status);
+      });
+  }, [curr_date]);
+
   return (
     <div>
       <React.Fragment>
@@ -26,34 +69,27 @@ function Sales() {
           <div className="sale_details">
             <div className="pick_date">
               <p>Select date for which you want to see sales : </p>
-              {/* <DesktopDatePicker
-              label="Date desktop"
-              inputFormat="MM/dd/yyyy"
-              value={value}
-              onChange={handleChange}
-              renderInput={(params) => <TextField {...params} />}
-            />
-            <DatePicker
-              label="Basic example"
-              value={value}
-              onChange={(newValue) => {
-                setValue(newValue);
-              }}
-              renderInput={(params) => <TextField {...params} />}
-            /> */}
+              {/* date picker */}
+              <div className="date_picker">
+                <DatePicker
+                  selected={curr_date}
+                  onChange={(date) => setcurr_date(date)}
+                />
+              </div>
             </div>
             <div className="detail">
               <p>
-                <strong> Today's sale : </strong> Rs 500
+                <strong> Today's sale : </strong> Rs {salesinfo.today_sale}
               </p>
               <p>
-                <strong>Today's Profit :</strong> Rs 500
+                <strong>Today's Profit :</strong> Rs {salesinfo.today_profit}
               </p>
               <p>
-                <strong>This Month's sale :</strong> Rs 500
+                <strong>This Month's sale :</strong> Rs {salesinfo.month_sale}
               </p>
               <p>
-                <strong>This Month's Profit :</strong> Rs 500
+                <strong>This Month's Profit :</strong> Rs{" "}
+                {salesinfo.month_profit}
               </p>
             </div>
           </div>

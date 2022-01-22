@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const Staff = require("./staff");
+const Sales = require("./sales");
 const Pdtdetails = require("./product");
 
 const Schema = mongoose.Schema;
@@ -42,6 +43,7 @@ const ownerSchema = new Schema(
     },
     staff: ["Staff"],
     product: ["Pdtdetails"],
+    sales: ["Sales"],
   },
   {
     timestamps: true,

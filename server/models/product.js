@@ -10,7 +10,7 @@ const productSchema = new Schema(
       trim: true,
     },
     pdt_remaining_stock: {
-      type: Number,
+      type: String,
       required: [true, "Remaining stock required"],
       trim: true,
     },

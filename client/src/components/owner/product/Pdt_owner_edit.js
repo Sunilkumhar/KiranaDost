@@ -60,11 +60,42 @@ function Pdt_owner_edit() {
       .then((res) => {
         console.log(res);
         localStorage.removeItem("edit_id");
-        history("/owner");
+        // history("/owner");
       })
       .catch((err) => {
         console.log(err.message);
       });
+    if (vals.pdt_remaining_stock !== "") {
+      let difference = localStorage.getItem("qty") - vals.pdt_remaining_stock;
+      let curr_date = new Date();
+      let obj = {
+        curr_day: curr_date.getDate(),
+        curr_month: curr_date.getMonth(),
+        curr_year: curr_date.getFullYear(),
+        today_sale: localStorage.getItem("price") * difference,
+        today_profit: localStorage.getItem("profit") * difference,
+        month_sale: localStorage.getItem("price") * difference,
+        month_profit: localStorage.getItem("profit") * difference,
+      };
+      console.log(obj);
+      axios
+        .post(`/sales/${localStorage.getItem("id")}/addsales`, obj, {
+          headers: {
+            "x-auth-token": localStorage.getItem("token"),
+          },
+        })
+        .then((res) => {
+          // setsalesinfo(res.data);
+          console.log(res.data);
+          localStorage.removeItem("price");
+          localStorage.removeItem("profit");
+          localStorage.removeItem("qty");
+        })
+        .catch((err) => {
+          console.log(err.status);
+        });
+    }
+    history("/owner");
   };
 
   return (

@@ -16,6 +16,9 @@ function Singlepdts({
 }) {
   const handleEdit = () => {
     localStorage.setItem("edit_id", _id);
+    localStorage.setItem("profit", pdt_current_price - pdt_bought_price);
+    localStorage.setItem("price", pdt_current_price);
+    localStorage.setItem("qty", pdt_remaining_stock);
   };
   return (
     <div className="single_pdt">

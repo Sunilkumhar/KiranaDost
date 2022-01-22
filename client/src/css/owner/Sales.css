@@ -15,6 +15,10 @@
 .sales .sale_details .pick_date p {
   font-size: 30px;
 }
+.sales .sale_details .pick_date .date_picker {
+  margin-top: 38px;
+  margin-left: 25px;
+}
 
 .sales .sale_details .detail {
   border: 1px solid rgb(168, 168, 168);
@@ -39,7 +43,12 @@
     margin: auto;
   }
   .sales .sale_details .pick_date p {
-    font-size: 25px;
+    font-size: 23px;
     padding-left: 7px;
+  }
+  .sales .sale_details .pick_date .date_picker {
+    margin-top: 35px;
+    margin-left: 15px;
+    margin-right: 7px;
   }
 }

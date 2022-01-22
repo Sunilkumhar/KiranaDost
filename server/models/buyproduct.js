@@ -15,7 +15,7 @@ const buySchema = new Schema(
       trim: true,
     },
     buy_quantity: {
-      type: Number,
+      type: String,
       required: [true, "Quantity required"],
       trim: true,
     },
